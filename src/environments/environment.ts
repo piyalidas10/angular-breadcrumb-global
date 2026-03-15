@@ -1,3 +1,6 @@
+import { LogLevel } from '../app/shared/log-level';
+
 export const environment = {
-  production: true
+  production: false,
+  logLevel: LogLevel.DEBUG
 };

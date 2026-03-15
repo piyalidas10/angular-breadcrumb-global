@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
-import { BreadcrumbSeoService } from './breadcrumbs/breadcrumb-seo.service';
 import { LoggerService } from './shared/logger.service';
 
 @Component({
@@ -14,9 +13,11 @@ import { LoggerService } from './shared/logger.service';
 export class AppComponent {
   private logger: LoggerService = inject(LoggerService);
   title = 'angular-breadcrumb-global';
-  private _seo = inject(BreadcrumbSeoService);
 
   ngOnInit() {
-    this.logger.log('AppComponent initialized');
+    this.logger.debug('AppComponent initialized');
+    this.logger.info('AppComponent is running');
+    this.logger.warn('This is a warning from AppComponent');
+    this.logger.error('This is an error from AppComponent');
   }
 }
